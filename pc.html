@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <style>
+        .content-items {
+            background: steelblue;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="container">
+        <h1 id="h1">This is Dom manipulation</h1>
+        <input type="text" id="input-Value">
+        <button id="btn">post</button>
+    </section>
+    <script>
+        // set attribute
+        // get attribute
+        // remove attribute
+        // class list.add
+        // classlist.remove
+        // remove
+        // append
+        // appendChild
+        const headingELement = document.getElementById('h1')
+        headingELement.classList.add('content-items')
+        headingELement.classList.remove('content-items')
+        headingELement.setAttribute('class', 'content-items')
+        headingELement.getAttribute('id')
+        console.log(headingELement);
+
+
+
+        document.getElementById('btn').addEventListener('click', function () {
+            const inputValue = document.getElementById('input-Value');
+            const x = inputValue.value;
+
+            const content = document.getElementById('container');
+            const n = document.createElement('h1')
+            n.innerText = x;
+            content.append(n)
+            inputValue.value = '';
+        })
+    </script>
+</body>
+
+</html>
